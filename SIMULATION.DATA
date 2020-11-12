@@ -1,0 +1,68 @@
+
+-----------------------------------------------------------------
+Simulation data (Tuning Streamline information etc.)
+-----------------------------------------------------------------
+
+
+
+
+NUMLINE
+-- Number of streamline    [Def = MAX(Nx,Ny,Nz)*Nwell]
+-- SL launching position   [INJ/PRD/CEL : Def = INJ]
+-- Trace From missed block [Yes/No : Def = No]
+1000 INJ Yes /
+
+
+CONVERGE
+-- Convergence criteria for pressure    [Def = 1.E-2]
+-- Convergence criteria for sat for FIM [Def = 1.E-3]
+1.d-1 1.d-4 /
+
+
+SL1DCON
+-- Numerical Method  [EXP/IMP/ANALYTICAL : Def = ANALYTICAL]
+-- Node control      [IRR/REG/AUTO : Def = IRR]
+-- Node Factor
+-- Flow Upwind       [SPU/2PU/3PU : Def = SPU]
+-- Compressibility   [Yes/No : Def = Yes]
+-- Gravity flow      [Yes/No : Def = Yes]
+Analytic  Auto 1.0 SPU No No /
+
+
+
+OPTIONS3D
+-- Pressure Update frequency: 1= every update, 0= first update, 
+-- N = update after every N step
+0 /
+
+
+CFL
+-- CFL number, for explicit [Def = 1.0  ]
+-- Minimum CFL time         [Def = 1.E-3]
+0.8 0.5d0 /
+
+CFLG
+-- CFL number, for Grv&Pc   [Def = 1.0  ]
+-- Minimum CFL time         [Def = 1.E-3]
+1.0 5.0d0 / 
+
+
+
+OUTPUTS3D
+-- Output Debug              [Text    , dbg.out]    
+-- Output Dynamic Data       [Excel   , Grid_*.xls]    
+-- Output Dynamic Data       [TecPlot ,      *.plt] 
+-- Output Streamline         [TecPlot , Strea*.plt]
+-- Output Diffusive TOF      [TecPlot , Strea*.plt]
+-- Output Pressure Matrix    [Excel   , PMtrx .xls]
+-- Output Saturation Matrix  [Excel   , SMtrx .xls]
+-- Output S3D Interface View [Text    , S3D_* .out]
+-- Output by ECLIPSE  format [Binary  ,     *.X000]
+-- Output by FrontSim format [Binary  ,     *.SLN ]
+0 0 0 0 0 0 0 1 0/
+
+
+
+
+END
+
